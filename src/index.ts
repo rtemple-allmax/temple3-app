@@ -1,27 +1,11 @@
 import './styles/index.css';
-import { FlexComponent, FrameComponent, GridComponent, RibbonComponent, ScrollComponent, ThemeService } from 'temple3-ui';
 
-class App {
-  start() {
-    this.registerComponents();
-    this.manageTheme();
-  }
+import { Component } from 'temple3-ui';
 
-  registerComponents(): void {
-    customElements.define('nxt-flex', FlexComponent);
-    customElements.define('nxt-frame', FrameComponent);
-    customElements.define('nxt-grid', GridComponent);
-    customElements.define('nxt-ribbon', RibbonComponent);
-    customElements.define('nxt-scroll', ScrollComponent);
-  }
+import { ribbonDef } from './defs/ribbon.def';
+import { App } from './app/app';
 
-  manageTheme(): void {
-    new ThemeService().customize({
-      appColor: '#0073a8',
-      appColorTextColor: 'white',
-      bg: 'white'
-    });
-  }
-}
-
-new App().start();
+new App().start(() => {
+  const ribbon = document.getElementById('ribbon');
+  (ribbon as Component).setState('data', ribbonDef);
+});

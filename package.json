@@ -20,6 +20,6 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "temple3-ui": "^0.0.9"
+    "temple3-ui": "^0.0.61"
   }
 }

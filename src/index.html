@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temple3 App</title>
-  <script src="./bundle.js"></script>
+  <script src="./bundle.js" defer></script>
 </head>
 <body>
   <nxt-frame>
@@ -16,7 +16,7 @@
       </nxt-flex>
     </div>
     <div class="slot" slot="main">
-      <nxt-ribbon></nxt-ribbon>
+      <nxt-ribbon id="ribbon"></nxt-ribbon>
       <app-test></app-test>
       <nxt-scroll maxheight="calc(100% - 145px)">
         <nxt-grid columns="repeat(3, 1fr)" columnsmd="repeat(2, 1fr)" columnssm="1fr">
@@ -34,6 +34,7 @@
       </nxt-scroll>
     </div>
     <div slot="footer"></div>
+    <div slot="drawer">Im in the drawer</div>
   </nxt-frame>
 </body>
 </html>
