@@ -1,15 +1,14 @@
 import { FlexComponent, FrameComponent, GridComponent, RibbonComponent, ScrollComponent, ThemeService } from "temple3-ui";
+import { ribbonDef } from "../defs/ribbon.def";
 
 class App {
-  start(cb?: VoidFunction) {
+  public start() {
     this.registerComponents();
+    this.configureComponents();
     this.manageTheme();
-    if (cb) {
-      cb();
-    }
   }
 
-  registerComponents(): void {
+  private registerComponents(): void {
     customElements.define('nxt-flex', FlexComponent);
     customElements.define('nxt-frame', FrameComponent);
     customElements.define('nxt-grid', GridComponent);
@@ -17,12 +16,17 @@ class App {
     customElements.define('nxt-scroll', ScrollComponent);
   }
 
-  manageTheme(): void {
+  private manageTheme(): void {
     new ThemeService().customize({
       appColor: '#0073a8',
       appColorTextColor: 'white',
       bg: 'white'
     });
+  }
+
+  private configureComponents(): void {
+    const ribbon = document.getElementById('ribbon');
+    (ribbon as RibbonComponent).configure(ribbonDef);
   }
 }
 

@@ -1,11 +1,18 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const openBrowser = require('react-dev-utils/openBrowser');
+
+const host = process.env.HOST || 'localhost';
+const port = parseInt(process.env.PORT, 10) || 3000;
 
 module.exports = {
   entry: './src/index.ts',
   mode: 'development',
   devServer: {
-    watchFiles: [ 'src/**/*' ]
+    watchFiles: [ 'src/**/*' ],
+    host,
+    port,
+    onListening: () => openBrowser(`http://${ host }: ${ port }`)
   },
   module: {
     rules: [

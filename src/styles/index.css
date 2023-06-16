@@ -33,6 +33,14 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
+.slot {
+  height: 100%;
+}
+
+.header-btn {
+  padding: 0 var(--space-md);
+}
+
 .grid-cell {
   border: var(--border);
   color: var(--color);
@@ -43,12 +51,4 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 3rem;
   box-shadow: var(--shadow);
   background-color: var(--bg);
-}
-
-.slot {
-  height: 100%;
-}
-
-.header-btn {
-  padding: 0 var(--space-md);
 }

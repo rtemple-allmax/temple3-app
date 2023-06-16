@@ -7,9 +7,9 @@
   <script src="./bundle.js" defer></script>
 </head>
 <body>
-  <nxt-frame>
+  <nxt-frame id="frame">
     <div class="slot" slot="header">
-      <nxt-flex justifyContent="space-between" alignItems="center">
+      <nxt-flex justify-content="space-between" align-items="center">
         <div class="header-btn">X</div>
         <div>Operator10&reg; Water</div>
         <div class="header-btn">X</div>
@@ -17,9 +17,8 @@
     </div>
     <div class="slot" slot="main">
       <nxt-ribbon id="ribbon"></nxt-ribbon>
-      <app-test></app-test>
-      <nxt-scroll maxheight="calc(100% - 145px)">
-        <nxt-grid columns="repeat(3, 1fr)" columnsmd="repeat(2, 1fr)" columnssm="1fr">
+      <nxt-scroll max-height="calc(100% - 145px)">
+        <nxt-grid columns="repeat(3, 1fr)" columns-md="repeat(2, 1fr)" columns-sm="1fr">
           <div class="grid-cell">1</div>
           <div class="grid-cell">2</div>
           <div class="grid-cell">3</div>

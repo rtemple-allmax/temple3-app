@@ -1,6 +1,6 @@
-import { RibbonData, RibbonSectionTypes } from 'temple3-ui';
+import { RibbonConfig, RibbonSectionTypes } from 'temple3-ui';
 
-export const ribbonDef: RibbonData= {
+export const ribbonDef: RibbonConfig= {
   tabs: [
     {
       label: 'File',
