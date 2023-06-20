@@ -1,21 +1,13 @@
-import { FlexComponent, FrameComponent, GridComponent, RibbonComponent, ScrollComponent, ThemeService } from "temple3-ui";
+import { ForComponent, IfComponent, RibbonComponent, ThemeService } from "temple3-ui";
 import { ribbonDef } from "../defs/ribbon.def";
+import { gridForDef } from "../defs/grid-for.def";
 
 class App {
   public start() {
-    this.registerComponents();
     this.configureComponents();
     this.manageTheme();
   }
-
-  private registerComponents(): void {
-    customElements.define('nxt-flex', FlexComponent);
-    customElements.define('nxt-frame', FrameComponent);
-    customElements.define('nxt-grid', GridComponent);
-    customElements.define('nxt-ribbon', RibbonComponent);
-    customElements.define('nxt-scroll', ScrollComponent);
-  }
-
+  
   private manageTheme(): void {
     new ThemeService().customize({
       appColor: '#0073a8',
@@ -27,6 +19,28 @@ class App {
   private configureComponents(): void {
     const ribbon = document.getElementById('ribbon');
     (ribbon as RibbonComponent).configure(ribbonDef);
+    const test = document.getElementById('test-btn');
+    if (test) {
+      test.addEventListener('click', () => this.testIf());
+    }
+    const forEl = document.getElementById('grid-for');
+    if (forEl) {
+      (forEl as ForComponent).configure(gridForDef)
+    }
+
+    const testDiv = document.getElementById('test-div');
+    console.log(JSON.parse(testDiv.getAttribute('data-test')))
+  }
+
+  private testIf(): void {
+    console.log('click')
+    const gridIf = document.getElementById('test-if');
+    const comp = gridIf as IfComponent;
+    const state = comp.currentState;
+    console.log('state', state);
+    if (state) {
+      comp.setState('render', !state.render)
+    }
   }
 }
 

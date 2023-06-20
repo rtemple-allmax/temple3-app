@@ -7,33 +7,29 @@
   <script src="./bundle.js" defer></script>
 </head>
 <body>
-  <nxt-frame id="frame">
+  <t3-frame id="frame">
     <div class="slot" slot="header">
-      <nxt-flex justify-content="space-between" align-items="center">
+      <t3-flex justify-content="space-between" align-items="center">
         <div class="header-btn">X</div>
         <div>Operator10&reg; Water</div>
         <div class="header-btn">X</div>
-      </nxt-flex>
+      </t3-flex>
     </div>
     <div class="slot" slot="main">
-      <nxt-ribbon id="ribbon"></nxt-ribbon>
-      <nxt-scroll max-height="calc(100% - 145px)">
-        <nxt-grid columns="repeat(3, 1fr)" columns-md="repeat(2, 1fr)" columns-sm="1fr">
-          <div class="grid-cell">1</div>
-          <div class="grid-cell">2</div>
-          <div class="grid-cell">3</div>
-          <div class="grid-cell">4</div>
-          <div class="grid-cell">5</div>
-          <div class="grid-cell">6</div>
-          <div class="grid-cell">7</div>
-          <div class="grid-cell">8</div>
-          <div class="grid-cell">9</div>
-          <div class="grid-cell">10</div>
-        </nxt-grid>
-      </nxt-scroll>
+      <div id="test-div" data-test="[ 1, 2, 3, 4, 5 ]"></div>
+      <t3-ribbon id="ribbon"></t3-ribbon>
+      <button id="test-btn">Test If</button>
+      <t3-scroll max-height="calc(100% - 145px)">
+        <t3-if id="test-if">
+          <h1>Condition is true</h1>
+        </t3-if>
+        <t3-grid columns="repeat(3, 1fr)" columns-md="repeat(2, 1fr)" columns-sm="1fr">
+          <t3-for id="grid-for"></t3-for>
+        </t3-grid>
+      </t3-scroll>
     </div>
     <div slot="footer"></div>
     <div slot="drawer">Im in the drawer</div>
-  </nxt-frame>
+  </t3-frame>
 </body>
 </html>

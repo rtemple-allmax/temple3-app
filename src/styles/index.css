@@ -40,15 +40,3 @@ p, h1, h2, h3, h4, h5, h6 {
 .header-btn {
   padding: 0 var(--space-md);
 }
-
-.grid-cell {
-  border: var(--border);
-  color: var(--color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 450px;
-  font-size: 3rem;
-  box-shadow: var(--shadow);
-  background-color: var(--bg);
-}
