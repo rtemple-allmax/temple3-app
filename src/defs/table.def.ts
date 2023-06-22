@@ -1,22 +1,34 @@
-import { ColumnTypes, TableConfig } from "temple3-ui";
+import { ColumnTypes, SortingState, TableConfig } from "temple3-ui";
 
 export const config: TableConfig = {
   columns: [
     {
-      name: 'ID',
+      label: 'ID',
+      dataField: 'id',
       type: ColumnTypes.number,
+      sortIndex: -1,
+      sortingState: SortingState.None
     },
     {
-      name: 'Name',
+      label: 'Name',
+      dataField: 'name',
       type: ColumnTypes.text,
+      sortIndex: 0,
+      sortingState: SortingState.None
     },
     {
-      name: 'Age',
-      type: ColumnTypes.number
+      label: 'Age',
+      dataField: 'age',
+      type: ColumnTypes.number,
+      sortIndex: -1,
+      sortingState: SortingState.None
     },
     {
-      name: 'Registered',
-      type: ColumnTypes.boolean
+      label: 'Registered',
+      dataField: 'registered',
+      type: ColumnTypes.boolean,
+      sortIndex: -1,
+      sortingState: SortingState.None
     }
   ],
   data: [
