@@ -1,4 +1,4 @@
-import { RibbonConfig, RibbonSectionTypes } from 'temple3-ui';
+import { RibbonConfig, RibbonSectionTypes } from '@mpulsesoftware/web3-components';
 
 export const ribbonDef: RibbonConfig= {
   tabs: [

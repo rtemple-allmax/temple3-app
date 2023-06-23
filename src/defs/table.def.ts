@@ -1,4 +1,4 @@
-import { ColumnTypes, SortingState, TableConfig } from "temple3-ui";
+import { ColumnTypes, SortingState, TableConfig } from "@mpulsesoftware/web3-components";
 
 export const config: TableConfig = {
   columns: [

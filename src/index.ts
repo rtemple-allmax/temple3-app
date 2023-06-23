@@ -1,4 +1,4 @@
 import './styles/index.css';
-import { App } from './app/app';
+import { AppComponent } from './app/app.component';
 
-new App().start();
+customElements.define('nxt-app', AppComponent);
