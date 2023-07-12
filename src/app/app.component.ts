@@ -11,19 +11,19 @@ class AppComponent extends Component<Props, State> {
   protected afterInit(props: Props, state: State): void {    
     this.setStyle(generateStyle(props, state));
     this.setTemplate(generateTemplate(props, state));
-
     this.manageTheme();
+  }
 
-    setTimeout(() => {
-      (this.root?.getElementById('ribbon') as RibbonComponent)?.configure(ribbonDef);
-      (this.root?.getElementById('table') as TableComponent)?.configure(config);
-    }, 0)
+  protected afterRender(): void {
+    (this.root?.getElementById('ribbon') as RibbonComponent)?.configure(ribbonDef);
+    (this.root?.getElementById('table') as TableComponent)?.configure(config);
   }
   
   private manageTheme(): void {
     new ThemeService().customize({
       appColor: '#0073a8',
       appColorTextColor: 'white',
+      tableHeaderBgColor: '#0073a8',
       bg: 'white'
     });
   }
