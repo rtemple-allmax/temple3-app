@@ -25,7 +25,11 @@ module.exports = {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src'),
         use: [ 'style-loader', 'css-loader' ]
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: 'asset/resource'
+      },
     ],
   },
   resolve: {
@@ -39,6 +43,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: "assets/images/[name][ext]",
     clean: true
   }
 }

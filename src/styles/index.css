@@ -15,7 +15,7 @@
 body {
   height: inherit;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
   overflow: hidden;
   background-color: var(--app-color);
 }

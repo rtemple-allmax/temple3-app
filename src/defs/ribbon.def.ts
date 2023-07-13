@@ -1,6 +1,9 @@
 import { RibbonConfig, RibbonSectionTypes } from '@mpulsesoftware/web3-components';
 
+const SMALL_BREAKPOINT = 520;
+
 export const ribbonDef: RibbonConfig= {
+  smallSize: SMALL_BREAKPOINT,
   tabs: [
     {
       label: 'File',
