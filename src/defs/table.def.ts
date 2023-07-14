@@ -6,7 +6,7 @@ const SMALL_BREAKPOINT = 520;
 export const config: TableConfig = {
   name: 'Test Table',
   width: 'calc(100% - (var{space-md} * 2))',
-  maxHeight: '70vh',
+  maxHeight: '50vh',
   maxHeightMd: '70vh',
   maxHeightSm: '87vh',
   showBorders: true,

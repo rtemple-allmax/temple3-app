@@ -13,8 +13,8 @@ const defaultState: State = { initial: true };
 
 const generateStyle = (props: Nullable<Props>, state: Nullable<State>) => {
   return `
-    .table-wrapper {
-      padding: var(--space-lg);
+    .main {
+      padding: var(--space-xl);
     }
   `;
 };
@@ -31,7 +31,7 @@ const generateTemplate = (props: Nullable<Props>, state: Nullable<State>): strin
       </div>
       <div slot="main">
         <nxt-ribbon id="ribbon"></nxt-ribbon>
-        <div class="table-wrapper">
+        <div class="main">
           <nxt-data-grid id="table"></nxt-data-grid>
         </div>
       </div>

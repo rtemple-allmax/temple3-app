@@ -20,12 +20,12 @@ export const ribbonDef: RibbonConfig= {
           controls: [
             {
               label: 'Open',
-              icon: 'X',
+              icon: 'fa-regular fa-folder-open',
               handler: () => console.log('Open Dataview')
             },
             {
               label: 'New',
-              icon: 'X',
+              icon: 'fa-regular fa-square-plus',
               handler: () => console.log('New Dataview')
             }
           ]
@@ -36,7 +36,7 @@ export const ribbonDef: RibbonConfig= {
           controls: [
             {
               label: 'Save',
-              icon: 'X',
+              icon: 'fa-regular fa-rectangle-list',
               handler: () => console.log('Save Format')
             }
           ]
@@ -47,15 +47,21 @@ export const ribbonDef: RibbonConfig= {
           controls: [
             {
               label: 'Properties',
-              icon: 'X',
+              icon: 'fa-regular fa-clipboard',
               handler: () => console.log('Open Properties')
             }
           ]
         },
         {
           label: 'Date Range',
-          type: RibbonSectionTypes.Custom,
-          customTemplate: '<h1>This is a custom template</h1>'
+          type: RibbonSectionTypes.Single,
+          controls: [
+            {
+              label: 'Date Range',
+              icon: 'fa-regular fa-calendar-days',
+              handler: () => console.log('Open Date Range')
+            }
+          ]
         },
         {
           label: 'Calculations',
@@ -63,7 +69,7 @@ export const ribbonDef: RibbonConfig= {
           controls: [
             {
               label: 'Calculate',
-              icon: 'X',
+              icon: 'fa-regular fa-clock',
               handler: () => console.log('Calculate')
             }
           ]
@@ -74,7 +80,7 @@ export const ribbonDef: RibbonConfig= {
           controls: [
             {
               label: 'Print',
-              icon: 'X',
+              icon: 'fa-solid fa-print',
               handler: () => console.log('Print')
             }
           ]
@@ -85,12 +91,12 @@ export const ribbonDef: RibbonConfig= {
           controls: [
             {
               label: 'Intermittent',
-              icon: 'X',
+              icon: 'fa-regular fa-square-minus',
               handler: () => console.log('Intermittent Display Options')
             },
             {
               label: 'Resize Columns',
-              icon: 'X',
+              icon: 'fa-solid fa-left-right',
               handler: () => console.log('Resize Columns')
             }
           ]
@@ -101,17 +107,17 @@ export const ribbonDef: RibbonConfig= {
           controls: [
             {
               label: 'Switch',
-              icon: 'X',
+              icon: 'fa-regular fa-shuffle',
               handler: () => console.log('Arrange - Switch')
             },
             {
               label: 'Arrange',
-              icon: 'X',
+              icon: 'fa-solid fa-layer-group',
               handler: () => console.log('Arrange - Arrange')
             },
             {
               label: 'Close All',
-              icon: 'X',
+              icon: 'fa-regular fa-rectangle-xmark',
               handler: () => console.log('Arrange - Close All')
             },
           ]
