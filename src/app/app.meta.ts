@@ -11,7 +11,7 @@ interface State {
 const defaultProps: Props = { initial: true };
 const defaultState: State = { initial: true };
 
-const generateStyle = (props: Nullable<Props>, state: Nullable<State>) => {
+const generateStyle = () => {
   return `
     .main {
       padding: var(--space-xl);
@@ -23,7 +23,7 @@ const generateStyle = (props: Nullable<Props>, state: Nullable<State>) => {
   `;
 };
 
-const generateTemplate = (props: Nullable<Props>, state: Nullable<State>): string => {
+const generateTemplate = (): string => {
   return `
     <nxt-frame>
       ${ header() }
@@ -32,6 +32,21 @@ const generateTemplate = (props: Nullable<Props>, state: Nullable<State>): strin
       ${ drawer() }
     </nxt-frame> 
   `;
+  // return `
+  //   <nxt-flex justify-content="space-evenly">
+  //   <div>1 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
+  //   <div>2 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
+  //   <div>3 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
+  //   </nxt-flex>
+  //   <nxt-grid columns="repeat(3, 1fr)">
+  //     <div>1 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
+  //     <div>2 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
+  //     <div>3 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
+  //   </nxt-grid>
+  //   <nxt-icon icon="fa-regular fa-clock" size="2rem"></nxt-icon>
+  //   <nxt-data-grid id="table"></nxt-data-grid>
+  // `;
+
 };
 
 const header = (): string => {
@@ -47,22 +62,14 @@ const header = (): string => {
 }
 
 const main = (): string => {
-  // return `
-  //   <div slot="main">
-  //     <nxt-ribbon id="ribbon"></nxt-ribbon>
-  //     <div class="main">
-  //       <nxt-data-grid id="table"></nxt-data-grid>
-  //     </div>
-  //   </div>
-  // `;
   return `
     <div slot="main">
       <nxt-ribbon id="ribbon"></nxt-ribbon>
-      <nxt-text-box id="test-text-box" placeholder="Placeholder..."></nxt-text-box>
-      <p class="target" id="test-target"></p>
+      <div class="main">
+        <nxt-data-grid id="table"></nxt-data-grid>
+      </div>
     </div>
   `;
-  
 };
 
 const footer = (): string => {

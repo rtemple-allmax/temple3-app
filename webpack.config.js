@@ -1,4 +1,5 @@
 const path = require('path');
+const { SourceMapDevToolPlugin } = require("webpack");
 const CopyPlugin = require('copy-webpack-plugin');
 const openBrowser = require('react-dev-utils/openBrowser');
 
@@ -30,6 +31,11 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: 'asset/resource'
       },
+      {
+        test: /\.m?js$/,
+        enforce: 'pre',
+        use: ['source-map-loader']
+      }
     ],
   },
   resolve: {
@@ -38,7 +44,10 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [{ from: 'src/index.html', to: 'index.html' }]
-    })
+    }),
+    new SourceMapDevToolPlugin({
+      filename: "[file].map"
+    }),
   ],
   output: {
     filename: 'bundle.js',
