@@ -20,6 +20,22 @@ const generateStyle = () => {
       color: red;
       font-size: 2rem;
     }
+    .grid-header {
+      background-color: var(--app-color);
+      padding: var(--space-md);
+    }
+    .switcher {
+      border: 1px solid var(--app-color-text-color);
+      border-radius: 5px;
+      color: var(--app-color-text-color);
+      padding: var(--space-lg);
+      background: transparent;
+      font-size: 1rem;
+    }
+    .switcher:hover {
+      color: var(--app-color);
+      background: var(--app-color-text-color);
+    }
   `;
 };
 
@@ -32,21 +48,6 @@ const generateTemplate = (): string => {
       ${ drawer() }
     </nxt-frame> 
   `;
-  // return `
-  //   <nxt-flex justify-content="space-evenly">
-  //   <div>1 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
-  //   <div>2 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
-  //   <div>3 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
-  //   </nxt-flex>
-  //   <nxt-grid columns="repeat(3, 1fr)">
-  //     <div>1 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
-  //     <div>2 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
-  //     <div>3 <nxt-text-box placeholder="Placeholder..."></nxt-text-box></div>
-  //   </nxt-grid>
-  //   <nxt-icon icon="fa-regular fa-clock" size="2rem"></nxt-icon>
-  //   <nxt-data-grid id="table"></nxt-data-grid>
-  // `;
-
 };
 
 const header = (): string => {
@@ -66,7 +67,15 @@ const main = (): string => {
     <div slot="main">
       <nxt-ribbon id="ribbon"></nxt-ribbon>
       <div class="main">
-        <nxt-data-grid id="table"></nxt-data-grid>
+        <div class="grid-header">
+          <button class="switcher" id="switch-btn">Show By Age</button>
+        </div>
+        <nxt-if id="grid-if">
+          <nxt-data-grid id="table"/>
+        </nxt-if>
+        <nxt-if id="chart-if">
+          <nxt-data-chart id="chart" type="bar" label-expr="name" value-expr="age" label="Ages"/>
+        </nxt-if>
       </div>
     </div>
   `;
