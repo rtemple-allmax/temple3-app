@@ -64,21 +64,26 @@ const header = (): string => {
 
 const main = (): string => {
   return `
-    <div slot="main">
-      <nxt-ribbon id="ribbon"></nxt-ribbon>
-      <div class="main">
-        <div class="grid-header">
-          <button class="switcher" id="switch-btn">Show By Age</button>
-        </div>
-        <nxt-if id="grid-if">
-          <nxt-data-grid id="table"/>
-        </nxt-if>
-        <nxt-if id="chart-if">
-          <nxt-data-chart id="chart" type="bar" label-expr="name" value-expr="age" label="Ages"/>
-        </nxt-if>
-      </div>
+    <div slot="main" class="main">
+      <nxt-data-view id="data-view"></nxt-data-view>
     </div>
   `;
+  // return `
+  //   <div slot="main">
+  //     <nxt-ribbon id="ribbon"></nxt-ribbon>
+  //     <div class="main">
+  //       <div class="grid-header">
+  //         <button class="switcher" id="switch-btn">Show By Age</button>
+  //       </div>
+  //       <nxt-if id="grid-if">
+  //         <nxt-data-grid id="table"/>
+  //       </nxt-if>
+  //       <nxt-if id="chart-if">
+  //         <nxt-data-chart id="chart" type="bar" label-expr="name" value-expr="age" label="Ages"/>
+  //       </nxt-if>
+  //     </div>
+  //   </div>
+  // `;
 };
 
 const footer = (): string => {
